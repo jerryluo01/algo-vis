@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Algorithm Visualizer</title>
+        <link rel="stylesheet" href="stylesheet.css" />
+    </head>
+    <body>
+        <div class="header">
+            <nav>
+                <ul>
+                    <li><button class="new">New Array</button></li>
+                    <div class="method">
+                        <li>Sorting Method</li>
+                        <select id="method">
+                            <option value="bubble">Bubble Sort</option>
+                            <option value="insertion">Insertion Sort</option>
+                            <option value="selection">Selection Sort</option>
+                            <option value="quick">Quick Sort</option>
+                            <option value="shell">Shell Sort</option>
+                        </select>
+                    </div>
+                    <div class="length">
+                        <li>Array Length</li>
+                        <input
+                            type="range"
+                            id="length"
+                            min="1"
+                            max="64"
+                            value="25"
+                        />
+                        <span id="lenDisplay">25</span>
+                    </div>
+                    <div class="speed">
+                        <li>Speed</li>
+                        <input
+                            type="range"
+                            min="1"
+                            max="4"
+                            value="1"
+                            id="speed"
+                        />
+                        <span id="speedDisplay">1</span>
+                    </div>
+                </ul>
+            </nav>
+        </div>
+        <div class="cont">
+            <div class="graph"></div>
+            <div class="nums"></div>
+            <div class="sort">
+                <button class="sortBtn">Sort</button>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+        <script src="algo.js"></script>
+    </body>
+</html>
