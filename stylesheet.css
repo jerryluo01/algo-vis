@@ -106,3 +106,7 @@ button:disabled {
     opacity: 0.6;
     border: 1px solid darkgray;
 }
+
+span {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
