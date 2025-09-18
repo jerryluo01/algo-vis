@@ -23,7 +23,7 @@ function updateSpeed() {
     speedDisplay.textContent = speedSlider.value;
     switch (speedSlider.value) {
         case "1":
-            speed = 400;
+            speed = 600;
             break;
         case "2":
             speed = 200;
