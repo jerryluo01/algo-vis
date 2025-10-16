@@ -31,36 +31,37 @@ async function insertion(array) {
         let key = array[i];
         let j = i - 1;
 
-        let delim = document.getElementById(`${i}`);
-        delim.style.backgroundColor = "purple";
+        const keyBord = document.getElementById(`${i}`);
+        keyBord.style.border = "2px solid yellow";
+
+        await sleep(speed);
 
         while (j >= 0 && array[j] > key) {
-            const bar1 = document.getElementById(`${j}`);
-            const bar2 = document.getElementById(`${j + 1}`);
+            let bar1 = document.getElementById(`${j}`);
+            // bar2 = document.getElementById(`${j + 1}`);
             bar1.style.backgroundColor = "blue";
-            bar2.style.backgroundColor = "red";
+            // bar2.style.backgroundColor = "red";
+            await sleep(speed);
+            update(array);
 
             array[j + 1] = array[j];
-            update(array);
-            await sleep(speed);
+            j--;
 
+            update(array);
+            let bar2 = document.getElementById(`${j + 2}`);
+            bar2.style.backgroundColor = "red";
+            bar1 = document.getElementById(`${j + 1}`);
+            bar1.style.backgroundColor = "blue";
+            await sleep(speed);
             bar1.style.backgroundColor = "white";
             bar2.style.backgroundColor = "white";
-            j--;
         }
 
         array[j + 1] = key;
         update(array);
         await sleep(speed);
-
-        // Mark sorted portion as green
-        for (let k = 0; k <= i; k++) {
-            document.getElementById(`${k}`).style.backgroundColor = "green";
-        }
+        keyBord.style.border = "";
     }
-
-    // Final update
-    update(array);
 }
 
 async function selection(array) {
