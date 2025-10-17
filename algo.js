@@ -32,11 +32,12 @@ async function insertion(array) {
         let j = i - 1;
 
         const keyBord = document.getElementById(`${i}`);
-        keyBord.style.border = "2px solid yellow";
+        keyBord.style.border = "3px solid green";
 
         await sleep(speed);
 
         while (j >= 0 && array[j] > key) {
+            await sleep(speed);
             let bar1 = document.getElementById(`${j}`);
             // bar2 = document.getElementById(`${j + 1}`);
             bar1.style.backgroundColor = "blue";
@@ -122,6 +123,7 @@ async function quick(array) {
         quickSort(array, low, pi - 1);
         quickSort(array, pi + 1, high);
     }
+    quickSort(array, low, high);
 }
 
 async function shell(array) {
