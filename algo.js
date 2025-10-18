@@ -102,28 +102,61 @@ async function selection(array) {
 }
 
 async function quick(array) {
-    function partition(array, low, high) {
+    let low = 0;
+    let high = array.length - 1;
+    async function partition(array, low, high) {
         let pivot = array[high];
+        let piv = document.getElementById(`${high}`);
+        let lim = document.getElementById(`${low}`);
         let i = low - 1;
+
+        await sleep(speed);
+        piv.style.border = "3px solid green";
+        lim.style.border = "3px solid yellowgreen";
 
         for (let j = low; j <= high - 1; j++) {
             if (array[j] < pivot) {
                 i++;
+                let barI = document.getElementById(`${i}`);
+                let barJ = document.getElementById(`${j}`);
+                barI.style.backgroundColor = "blue";
+                barJ.style.backgroundColor = "red";
+                await sleep(speed);
+
                 [array[i], array[j]] = [array[j], array[i]];
+                barI.style.backgroundColor = "red";
+                barJ.style.backgroundColor = "blue";
+                update(array);
+                await sleep(speed);
+                barI.style.backgroundColor = "white";
+                barJ.style.backgroundColor = "white";
             }
         }
+        let barI = document.getElementById(`${i + 1}`);
+        let barJ = document.getElementById(`${high}`);
+        barI.style.backgroundColor = "blue";
+        barJ.style.backgroundColor = "red";
+        await sleep(speed);
         [array[i + 1], array[high]] = [array[high], array[i + 1]];
+        barI.style.backgroundColor = "red";
+        barJ.style.backgroundColor = "blue";
+        update(array);
+        await sleep(speed);
+        barI.style.backgroundColor = "white";
+        barJ.style.backgroundColor = "white";
+        piv.style.border = "";
+        lim.style.border = "";
         return i + 1;
     }
 
-    function quickSort(array, low, high) {
+    async function quickSort(array, low, high) {
         if (low >= high) return;
-        let pi = partition(array, low, high);
+        let pi = await partition(array, low, high);
 
-        quickSort(array, low, pi - 1);
-        quickSort(array, pi + 1, high);
+        await quickSort(array, low, pi - 1);
+        await quickSort(array, pi + 1, high);
     }
-    quickSort(array, low, high);
+    await quickSort(array, low, high);
 }
 
 async function shell(array) {
