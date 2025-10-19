@@ -25,7 +25,6 @@ Watch your favorite sorting algorithms come to life with smooth animations, colo
 ✅ Real-time bar updates with smooth color transitions:
 - 🔵 Blue → current comparison  
 - 🔴 Red → swapping elements  
-- 🟣 Purple → correctly placed element  
 - 🟢 Green borders → gap or pivot highlights  
 
 ---
