@@ -165,18 +165,50 @@ async function shell(array) {
     for (let gap = Math.floor(n / 2); gap > 0; gap = Math.floor(gap / 2)) {
         for (let i = gap; i < n; i++) {
             let temp = array[i];
-            const bar1 = document.getElementById(`${j}`);
-            const bar2 = document.getElementById(`${j + 1}`);
-            bar1.style.backgroundColor = "blue";
-            bar2.style.backgroundColor = "red";
+
+            const gap1 = document.getElementById(`${i}`);
+            const gap2 = document.getElementById(`${i - gap}`);
+
+            gap1.style.border = "solid 3px greenyellow";
+            gap2.style.border = "solid 3px green";
+            gap1.style.backgroundColor = "blue";
+            gap2.style.backgroundColor = "red";
+
             await sleep(speed);
 
             let j = i;
             while (j >= gap && array[j - gap] > temp) {
+                const bar1 = document.getElementById(`${j}`);
+                const bar2 = document.getElementById(`${j - gap}`);
+                // bar1.style.backgroundColor = "blue";
+                // bar2.style.backgroundColor = "red";
+
                 array[j] = array[j - gap];
+                update(array);
+                bar1.style.backgroundColor = "red";
+                bar2.style.backgroundColor = "blue";
+                await sleep(speed);
+                bar1.style.backgroundColor = "white";
+                bar2.style.backgroundColor = "white";
+
                 j -= gap;
             }
+            const gap3 = document.getElementById(`${j}`);
+            gap3.style.backgroundColor = "purple";
+
             array[j] = temp;
+
+            update(array);
+            gap3.style.backgroundColor = "blue";
+            gap1.style.backgroundColor = "purple";
+
+            await sleep(speed);
+
+            gap1.style.border = "";
+            gap1.style.backgroundColor = "white";
+            gap2.style.backgroundColor = "white";
+            gap3.style.backgroundColor = "white";
+            gap2.style.border = "";
         }
     }
 }
