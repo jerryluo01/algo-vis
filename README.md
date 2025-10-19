@@ -69,12 +69,6 @@ Each sorting algorithm updates the DOM in real-time by adjusting each bar’s he
 |-------|----------|
 | 🔵 Blue | Currently comparing elements |
 | 🔴 Red | Element being swapped |
-| 🟣 Purple | Element placed correctly |
 | 🟢 Green Border | Pivot / gap marker |
 | ⚪ White | Idle / unhighlighted |
 
----
-
-## 📸 Example Preview
-
-> (Optional — you
