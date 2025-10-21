@@ -56,10 +56,10 @@ Each sorting algorithm updates the DOM in real-time by adjusting each bar’s he
 
 ## 🧱 Tech Stack
 
-- **HTML5** — structure and interface  
-- **CSS3** — styling and color animations  
-- **JavaScript (ES6)** — core logic and visualization updates  
-- **DOM manipulation** — to dynamically update bar heights and colors
+- **HTML5** - structure and interface  
+- **CSS3**  styling and color animations  
+- **JavaScript (ES6)** - core logic and visualization updates  
+- **DOM manipulation** - to dynamically update bar heights and colors
 
 ---
 
