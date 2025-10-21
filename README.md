@@ -72,4 +72,4 @@ Each sorting algorithm updates the DOM in real-time by adjusting each bar’s he
 | 🟢 Green Border | Pivot / gap marker |
 | ⚪ White | Idle / unhighlighted |
 
-https://jerryluo01.github.io/algo-vis/
+## https://jerryluo01.github.io/algo-vis/
